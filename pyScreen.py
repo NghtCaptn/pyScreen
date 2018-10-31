@@ -31,23 +31,16 @@ print("**********************************************************************")
 define screen shot function
 '''
 
-
 def screenShot(source, encode):
-	ts = round(time.mktime(time.localtime()))
-	FNULL = subprocess.PIPE
-	sourceScreen = subprocess.check_call("ffmpeg.exe -ss 00:10:00 -t 1 -i {0} -vframes 1 source-1-{1}.png".format(source, ts))
-	sourceScreen = subprocess.check_call("ffmpeg.exe -ss 00:11:00 -t 1 -i {0} -vframes 1 source-2-{1}.png".format(source, ts))
-	sourceScreen = subprocess.check_call("ffmpeg.exe -ss 00:12:00 -t 1 -i {0} -vframes 1 source-3-{1}.png".format(source, ts))
-	sourceScreen = subprocess.check_call("ffmpeg.exe -ss 00:13:00 -t 1 -i {0} -vframes 1 source-4-{1}.png".format(source, ts))
-	sourceScreen = subprocess.check_call("ffmpeg.exe -ss 00:14:00 -t 1 -i {0} -vframes 1 source-5-{1}.png".format(source, ts))
-	sourceScreen = subprocess.check_call("ffmpeg.exe -ss 00:15:00 -t 1 -i {0} -vframes 1 source-6-{1}.png".format(source, ts))
-	encodeScreen = subprocess.check_call("ffmpeg.exe -ss 00:10:00 -t 1 -i {0} -vframes 1 encode-1-{1}.png".format(source, ts))
-	encodeScreen = subprocess.check_call("ffmpeg.exe -ss 00:11:00 -t 1 -i {0} -vframes 1 encode-2-{1}.png".format(source, ts))
-	encodeScreen = subprocess.check_call("ffmpeg.exe -ss 00:12:00 -t 1 -i {0} -vframes 1 encode-3-{1}.png".format(source, ts))
-	encodeScreen = subprocess.check_call("ffmpeg.exe -ss 00:13:00 -t 1 -i {0} -vframes 1 encode-4-{1}.png".format(source, ts))
-	encodeScreen = subprocess.check_call("ffmpeg.exe -ss 00:14:00 -t 1 -i {0} -vframes 1 encode-5-{1}.png".format(source, ts))
-	encodeScreen = subprocess.check_call("ffmpeg.exe -ss 00:15:00 -t 1 -i {0} -vframes 1 encode-6-{1}.png".format(source, ts))
-	print("Screenshots generated successfully!")
+	i = 1
+	j = 10
+	while i <= 6:
+		ts = round(time.mktime(time.localtime()))
+		sourceScreen = subprocess.check_call("ffmpeg.exe -ss 00:{3}:00 -t 1 -i {0} -vframes 1 source-{2}-{1}.png".format(source, ts, i, j))
+		encodeScreen = subprocess.check_call("ffmpeg.exe -ss 00:{3}:00 -t 1 -i {0} -vframes 1 encode-{2}-{1}.png".format(encode, ts, i, j))
+		i += 1
+		j += 5
+	print("Screenshots Generated Successfully!")
 
 source = input("Enter your Source Location: ")
 type(source)
