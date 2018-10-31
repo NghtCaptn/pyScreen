@@ -36,8 +36,8 @@ def screenShot(source, encode):
 	j = 10
 	while i <= 6:
 		ts = round(time.mktime(time.localtime()))
-		sourceScreen = subprocess.check_call("ffmpeg.exe -ss 00:{3}:00 -t 1 -i {0} -vframes 1 source-{2}-{1}.png".format(source, ts, i, j))
-		encodeScreen = subprocess.check_call("ffmpeg.exe -ss 00:{3}:00 -t 1 -i {0} -vframes 1 encode-{2}-{1}.png".format(encode, ts, i, j))
+		sourceScreen = subprocess.check_call("ffmpeg -ss 00:{3}:00 -t 1 -i {0} -vframes 1 source-{2}-{1}.png".format(source, ts, i, j))
+		encodeScreen = subprocess.check_call("ffmpeg -ss 00:{3}:00 -t 1 -i {0} -vframes 1 encode-{2}-{1}.png".format(encode, ts, i, j))
 		i += 1
 		j += 5
 	print("Screenshots Generated Successfully!")
