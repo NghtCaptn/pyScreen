@@ -13,7 +13,7 @@ Download the script and Prequisites if neccessary and simply run python pyScreen
 ## Usage
 pyScreen has been rewritten and now uses a argumentative format for the user to execute commands within pyScreen.
 ```pyScreen.py [FILE NAME.MP4] [OPTIONS -l -t -n]```
-pyScreen now allows the user to select whether they want to capture screen shots of a single video file or two files by setting the required parameter ```-t```. If the user ones to generate screen shots for a single video file then set ```-t 1`` or for screen shots of two video files set ```-t 2```. The user is also required to set the ```-n``` parameter which tells pyScreen how many screen shots to generate. When the user sets ```-t 2``` the ```-l``` parameter is required as it tells pyScreen the file location of 2nd video file.
+pyScreen now allows the user to select whether they want to capture screen shots of a single video file or two files by setting the required parameter ```-t```. If the user ones to generate screen shots for a single video file then set ```-t 1``` or for screen shots of two video files set ```-t 2```. The user is also required to set the ```-n``` parameter which tells pyScreen how many screen shots to generate. When the user sets ```-t 2``` the ```-l``` parameter is required as it tells pyScreen the file location of 2nd video file.
 
 ## Examples
 Generate Six Screen shots of ONE video file:
